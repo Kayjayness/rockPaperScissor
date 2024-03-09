@@ -32,24 +32,80 @@ function getPlayerChoice() {
 
 function playRound(computer, player) {
     if (player === computer) {
-        alert(`It's a tie, both had ${player}`);
+        alert(`Computer Chose ${computer}!\nIt's a tie, both had ${player}`);
+        return 2;
     }
     else if (player === "rock" && computer === "scissor") {
-        alert(`You Win! ${player} beats ${computer}`);        
+        alert(`Computer Chose ${computer}!\nYou Win! ${player} beats ${computer}`);
+        return 1;        
     }
     else if (player === "scissor" && computer === "paper") {
-        alert(`You Win! ${player} beats ${computer}`);        
+        alert(`Computer Chose ${computer}!\nYou Win! ${player} beats ${computer}`);
+        return 1;        
     }
     else if (player === "paper" && computer === "rock") {
-        alert(`You Win! ${player} beats ${computer}`);        
+        alert(`Computer Chose ${computer}!\nYou Win! ${player} beats ${computer}`);
+        return 1;        
     }
     else {
-        alert(`You Lose! ${computer} beats ${player}`);
+        alert(`Computer Chose ${computer}!\nYou Lose! ${computer} beats ${player}`);
+        return 0;
     }
 }
 
-let playerSelection = getPlayerChoice();
-let computerSelection = getComputerChoice();
-console.log(playerSelection);
-console.log(computerSelection);
-playRound(computerSelection, playerSelection);
+function playGame () {
+    let playerScore = 0;
+    let computerScore = 0;
+    let gameRounds = 5;
+    for (let i = 1; i <= gameRounds; ++i) {
+        let playerSelection = getPlayerChoice();
+        let computerSelection = getComputerChoice();
+        let result = playRound(computerSelection, playerSelection);
+        if(result === 1) {
+            ++playerScore;
+            continue;
+        }
+        else if(result === 0) {
+            ++computerScore;
+            continue;
+        }
+        else {
+            continue;
+        }
+    }
+    postResults(computerScore, playerScore);
+}
+
+function postResults (computerScore, playerScore) {
+    if(playerScore > computerScore) {
+        alert(`Congratulations, you won the game with a score of ${playerScore} to ${computerScore}`);
+    }
+    else if(computerScore > playerScore) {
+        alert(`Sorry, you lost the game with a score of ${playerScore} to ${computerScore}`);
+    }
+    else {
+        alert(`You ended the match in a draw of ${playerScore} to ${computerScore}`);
+    }
+}
+
+function playAgainPrompt () {
+    while(true) {
+        let playAgain = prompt("Would you like to play again? (Y/N)");
+        if(playAgain === "y" || playAgain === "Y") {
+            return true;
+        }
+        else if (playAgain === "n" || playAgain === "N") {
+            alert("Thank you for playing");
+            return false;
+        }
+        else {
+            alert("Invalid response, please try again");
+        }
+    }
+}
+
+let playAgain = true;
+while(playAgain) {
+playGame();
+playAgain = playAgainPrompt();
+}
