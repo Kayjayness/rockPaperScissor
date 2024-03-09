@@ -29,5 +29,27 @@ function getPlayerChoice() {
         }
     }
 }
-//console.log(getPlayerChoice());
-//let playerSelection = 
+
+function playRound(computer, player) {
+    if (player === computer) {
+        alert(`It's a tie, both had ${player}`);
+    }
+    else if (player === "rock" && computer === "scissor") {
+        alert(`You Win! ${player} beats ${computer}`);        
+    }
+    else if (player === "scissor" && computer === "paper") {
+        alert(`You Win! ${player} beats ${computer}`);        
+    }
+    else if (player === "paper" && computer === "rock") {
+        alert(`You Win! ${player} beats ${computer}`);        
+    }
+    else {
+        alert(`You Lose! ${computer} beats ${player}`);
+    }
+}
+
+let playerSelection = getPlayerChoice();
+let computerSelection = getComputerChoice();
+console.log(playerSelection);
+console.log(computerSelection);
+playRound(computerSelection, playerSelection);
