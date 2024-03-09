@@ -15,4 +15,19 @@ function getComputerChoice() {
     }
 }
 
-//console.log(getComputerChoice());
+function getPlayerChoice() {
+    while (true) {
+        let choice = prompt("Choose between ( rock, paper, scissor )");
+        choice = choice.toLowerCase();
+        switch(choice) {
+            case "rock":
+            case "paper":
+            case "scissor":
+                return choice;
+            default:
+                alert("Not a valid choice, please try again");
+        }
+    }
+}
+//console.log(getPlayerChoice());
+//let playerSelection = 
