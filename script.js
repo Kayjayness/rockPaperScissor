@@ -12,7 +12,7 @@ playButton.addEventListener("click", startGame);
 
 function startGame() {
     document.querySelector(".playButton").style.display = "none";
-    document.querySelector(".submitRoundsForm").style.display = "block";
+    document.querySelector(".submitRoundsForm").style.display = "flex";
     roundForm();
     gameButtons();
 }
@@ -82,7 +82,7 @@ function postResults() {
 }
 
 function gameButtons() {
-    let buttons = document.querySelectorAll(".gameButtons > button");
+    let buttons = document.querySelectorAll(".buttons > button");
     buttons.forEach(button => {
         let gameButtonHandler = event => {
             playRound(getComputerChoice(), event.target.id);

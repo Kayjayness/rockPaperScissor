@@ -1,6 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 .theGame,
 .submitRoundsForm,
 .playAgain,
 .playButton {
     display: none
+}
+
+body {
+    background-color: #333A73;
+    color: #FFDD95;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.playButton {
+    margin: 25px auto;
+    padding: 25px 150px;
+    border: none;
+    border-bottom: 5px solid #111;
+    border-right: 5px solid #111;
+    border-radius: 18px;
+    background-color: #FBA834;
+}
+
+.submitRoundsForm {
+    margin-top: 25px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    font-weight: 900;
+    display: none;
+
+}
+
+input {
+    width: 400px;
+    height: 25px;
+}
+
+.submitRoundsButton {
+    margin: 25px auto;
+    padding: 25px 150px;
+    border: none;
+    border-bottom: 5px solid #111;
+    border-right: 5px solid #111;
+    border-radius: 18px;
+    background-color: #FBA834;
+}
+
+.buttons > button {
+
+    margin: 25px auto;
+    padding: 100px 150px;
+    border: none;
+    border-bottom: 5px solid #111;
+    border-right: 5px solid #111;
+    border-radius: 18px;
+    background-color: #FBA834;
+    font-size: larger;
+    font-weight: 900;
+}
+
+.buttons {
+    display: flex;
+    margin-top: 25px;
+    gap: 50px;
+
+}
+
+.gameButtons {
+    margin: 50px;
+    gap: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.endMessage {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    font-size: larger;
+    font-weight: 900;
 }
