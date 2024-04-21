@@ -8,11 +8,11 @@
 </head>
 <body>
     <h1>Rock paper scissor game</h1>
-    <button class="startButton">Start</button>
-    <form class="chooseRounds">
-        <label for="playRounds">How many rounds would you like to play?</label>
-        <input type="number" id="playRounds" name="playRounds" min="3">
-        <button class="submitRounds">Submit</button>
+    <button class="playButton">Play</button>
+    <form class="submitRoundsForm">
+        <label for="numberRounds">How many rounds would you like to play?</label>
+        <input type="number" id="numberRounds" name="numberRounds" min="3">
+        <button class="submitRoundsButton">Submit</button>
     </form>
     <div class="theGame">
     <h3 class="rounds"></h3>
@@ -23,6 +23,7 @@
         <button id="scissor">Scissor</button>
     </div>
     </div>
+    <div class="endMessage"></div>
     
 </body>
 </html>
